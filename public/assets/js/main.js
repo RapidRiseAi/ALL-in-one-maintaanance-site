@@ -63,6 +63,17 @@
   /* ---- Current year ---- */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  /* ---- Fast quote WhatsApp links ---- */
+  var buildWhatsAppUrl = function (message) {
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  };
+
+  $$('[data-fast-quote-service]').forEach(function (link) {
+    var service = link.getAttribute("data-fast-quote-service") || "General";
+    var message = "Hi All in One Maintenance, I'd like a fast quote for " + service + ".";
+    link.setAttribute("href", buildWhatsAppUrl(message));
+  });
+
   /* ---- Contact form -> WhatsApp / email (no backend needed) ---- */
   var form = $("#quote-form");
   if (form) {
