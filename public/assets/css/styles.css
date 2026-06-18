@@ -1052,6 +1052,35 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
     padding: 34px 0;
   }
 
+  .section:not(.section--soft),
+  .section--tight {
+    color: #d9e0ea;
+  }
+
+  .section:not(.section--soft) .section-title,
+  .section--tight .section-title {
+    color: #f7f9fc;
+  }
+
+  .section:not(.section--soft) .section-lead,
+  .section--tight .section-lead,
+  .section:not(.section--soft) .story p {
+    color: #c7cfdb;
+  }
+
+  .section:not(.section--soft) .feature-list b {
+    color: #f1f5fa;
+  }
+
+  .section:not(.section--soft) .feature-list span {
+    color: #c7cfdb;
+  }
+
+  .section:not(.section--soft) .text-orange,
+  .section--tight .text-orange {
+    color: #ffb14a;
+  }
+
   .kicker {
     padding: 6px 11px;
     font-size: .68rem;
