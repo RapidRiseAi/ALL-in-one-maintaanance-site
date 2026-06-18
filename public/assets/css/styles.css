@@ -1,5 +1,5 @@
 /* ==========================================================================
-   All in One Maintenance — Design System
+   All in One Maintenance Design System
    Brand: Industrial charcoal + orange/amber accent + supporting navy
    ========================================================================== */
 
@@ -127,10 +127,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   display: inline-flex; align-items: center; gap: 7px;
   color: #fff; font-weight: 700;
 }
-.topbar__badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; box-shadow: 0 0 0 0 rgba(46,204,113,.6); animation: pulse 2s infinite; }
 .topbar__right { display: flex; align-items: center; gap: 18px; }
-@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(46,204,113,.6);} 70%{box-shadow:0 0 0 7px rgba(46,204,113,0);} 100%{box-shadow:0 0 0 0 rgba(46,204,113,0);} }
-
 /* ==========================================================================
    Header / Nav
    ========================================================================== */
@@ -175,11 +172,11 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
    Hero
    ========================================================================== */
 .hero {
-  position: relative; color: #fff; overflow: hidden;
+  position: relative; color: #fff; overflow: hidden; min-height: calc(100vh - 116px);
   background:
-    radial-gradient(1100px 540px at 85% -10%, rgba(247,148,29,.20), transparent 60%),
-    radial-gradient(900px 500px at -5% 110%, rgba(37,51,122,.55), transparent 55%),
-    linear-gradient(160deg, #1b2027 0%, #14171d 55%, #0f1217 100%);
+    linear-gradient(90deg, rgba(10,12,16,.92) 0%, rgba(15,18,23,.82) 46%, rgba(15,18,23,.58) 72%, rgba(15,18,23,.72) 100%),
+    url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1800&q=82") center right / cover no-repeat,
+    #0f1217;
 }
 .hero::before { /* blueprint grid */
   content:""; position: absolute; inset: 0;
@@ -188,12 +185,12 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   background-size: 46px 46px; mask-image: radial-gradient(120% 100% at 70% 0%, #000 35%, transparent 80%);
   pointer-events: none;
 }
-.hero::after { /* diagonal orange stripe motif */
-  content:""; position: absolute; right: -8%; top: 0; bottom: 0; width: 42%;
-  background: linear-gradient(115deg, transparent 46%, rgba(247,148,29,.16) 47%, rgba(247,148,29,.16) 52%, transparent 53%, transparent 58%, rgba(247,148,29,.10) 59%, rgba(247,148,29,.10) 62%, transparent 63%);
+.hero::after {
+  content:""; position: absolute; inset: auto 0 0; height: 36%;
+  background: linear-gradient(180deg, transparent, rgba(8,10,14,.82));
   pointer-events: none;
 }
-.hero__inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 50px; align-items: center; padding: 78px 0 86px; }
+.hero__inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) 430px; gap: clamp(70px, 9vw, 130px); align-items: center; min-height: calc(100vh - 116px); padding: 96px 0 104px; }
 .hero__badge {
   display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: .82rem;
   letter-spacing: .04em; text-transform: uppercase; color: #ffd9a6;
@@ -203,7 +200,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 .hero__badge svg { width: 16px; height: 16px; }
 .hero h1 { font-size: clamp(2.3rem, 6vw, 3.85rem); color: #fff; letter-spacing: -.02em; }
 .hero h1 .hl { color: var(--orange); position: relative; white-space: nowrap; }
-.hero__sub { font-size: 1.16rem; color: #c5ccd9; margin: 22px 0 30px; max-width: 540px; }
+.hero__sub { font-size: 1.18rem; color: #d8deea; margin: 24px 0 34px; max-width: 620px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero__trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 34px; }
 .hero__trust li { display: inline-flex; align-items: center; gap: 9px; color: #d7dde7; font-weight: 600; font-size: .95rem; }
@@ -212,9 +209,13 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 .hero__sidecall a { color: #fff; font-weight: 700; }
 
 /* Hero visual card */
-.hero__visual { position: relative; }
+.hero__visual { position: relative; padding: 64px 0 86px; }
+.hero-photo { position: absolute; inset: 0 18px 0 -18px; border-radius: 32px; overflow: hidden; box-shadow: 0 34px 90px rgba(0,0,0,.34); }
+.hero-photo::after { content:""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,10,14,.2), rgba(8,10,14,.72)); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) brightness(.72); }
 .hero-card {
-  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  position: relative; z-index: 2;
+  background: linear-gradient(180deg, rgba(20,24,31,.82), rgba(14,17,22,.76));
   border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-lg);
   padding: 26px; backdrop-filter: blur(6px); box-shadow: var(--shadow-lg);
 }
@@ -240,8 +241,8 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   display: flex; align-items: center; gap: 10px; font-family: var(--font-head);
 }
 .hero-chip svg { width: 22px; height: 22px; color: var(--orange-dark); }
-.hero-chip--1 { top: -18px; right: 8%; animation: float 5s ease-in-out infinite; }
-.hero-chip--2 { bottom: -20px; left: -22px; animation: float 6s ease-in-out infinite .5s; }
+.hero-chip--1 { top: 8px; right: -10px; animation: float 5s ease-in-out infinite; }
+.hero-chip--2 { bottom: 4px; left: -10px; animation: float 6s ease-in-out infinite .5s; }
 .hero-chip small { display: block; font-weight: 600; color: var(--steel); font-size: .72rem; font-family: var(--font-body); }
 @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);} }
 
@@ -309,22 +310,18 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 .feature-list b { font-family: var(--font-head); display: block; font-size: 1.05rem; margin-bottom: 2px; }
 .feature-list span { color: var(--steel); font-size: .96rem; }
 
-/* Image-substitute "visual" panel built from CSS (no external photos) */
 .visual-panel {
   position: relative; border-radius: var(--r-lg); overflow: hidden; min-height: 420px;
-  background:
-    radial-gradient(700px 400px at 80% 10%, rgba(247,148,29,.25), transparent 60%),
-    linear-gradient(160deg, #1f2530, #14171d);
+  background: #14171d;
   border: 1px solid rgba(255,255,255,.08); box-shadow: var(--shadow-lg);
   display: flex; align-items: flex-end; padding: 26px;
 }
 .visual-panel::before {
   content:""; position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size: 38px 38px; mask-image: radial-gradient(120% 100% at 80% 10%, #000 30%, transparent 75%);
+  background: linear-gradient(180deg, rgba(10,12,16,.18), rgba(10,12,16,.78));
 }
-.visual-panel__tools { position: absolute; top: 0; left: 0; right: 0; bottom: 80px; display: grid; place-items: center; }
-.visual-panel__tools svg { width: 58%; height: auto; max-width: 320px; opacity: .92; }
+.visual-panel__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.72) saturate(.92); }
+.visual-panel__tools { display: none; }
 .visual-badge {
   position: relative; z-index: 2; background: rgba(255,255,255,.95); border-radius: 16px;
   padding: 16px 20px; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow); width: 100%;
@@ -507,7 +504,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
    ========================================================================== */
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero__visual { max-width: 460px; }
+  .hero__visual { max-width: 520px; padding-top: 44px; }
   .split { grid-template-columns: 1fr; gap: 36px; }
   .services-grid, .tcards, .steps { grid-template-columns: repeat(2,1fr); }
   .values { grid-template-columns: repeat(2,1fr); }
