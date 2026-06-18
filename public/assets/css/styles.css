@@ -244,6 +244,10 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 .hero-chip small { display: block; font-weight: 600; color: var(--steel); font-size: .72rem; font-family: var(--font-body); }
 @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);} }
 
+
+/* Mobile-only fast fix prompt, hidden by default so desktop section order remains unchanged. */
+.mobile-fast-fix { display: none; }
+
 /* ==========================================================================
    Trust strip / stats
    ========================================================================== */
@@ -528,6 +532,57 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   .nav__mobile-quote { box-shadow: 0 12px 28px rgba(37,211,102,.34); }
   .nav__mobile-call { background: rgba(255,255,255,.96); border-color: rgba(255,255,255,.45); }
   .nav__mobile-trust { color: #d9dee8; font-size: .82rem; font-weight: 700; letter-spacing: .01em; line-height: 1.35; text-align: center; }
+
+  .mobile-fast-fix {
+    display: block;
+    background: var(--bg-soft);
+    padding: 18px 0 0;
+  }
+  .mobile-fast-fix__card {
+    padding: 18px;
+    background: linear-gradient(180deg, #fff, var(--bg-soft));
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .mobile-fast-fix__eyebrow {
+    color: var(--ink);
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .mobile-fast-fix__proof {
+    display: grid;
+    gap: 9px;
+    margin-bottom: 14px;
+  }
+  .mobile-fast-fix__proof li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--steel);
+    font-family: var(--font-head);
+    font-size: .92rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .mobile-fast-fix__proof svg {
+    width: 18px;
+    height: 18px;
+    color: var(--orange-dark);
+  }
+  .mobile-fast-fix__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .mobile-fast-fix__actions .btn {
+    width: 100%;
+    min-height: 52px;
+    white-space: normal;
+  }
   .contact-grid { grid-template-columns: 1fr; }
   .fast-quote {
     display: block;
