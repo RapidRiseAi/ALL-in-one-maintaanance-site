@@ -396,6 +396,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
    Contact specifics
    ========================================================================== */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: start; }
+.fast-quote { display: none; }
 .contact-methods { display: grid; gap: 16px; }
 .cmethod {
   display: flex; align-items: center; gap: 18px; background: #fff; border: 1px solid var(--line);
@@ -528,6 +529,51 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   .nav__mobile-call { background: rgba(255,255,255,.96); border-color: rgba(255,255,255,.45); }
   .nav__mobile-trust { color: #d9dee8; font-size: .82rem; font-weight: 700; letter-spacing: .01em; line-height: 1.35; text-align: center; }
   .contact-grid { grid-template-columns: 1fr; }
+  .fast-quote {
+    display: block;
+    margin-bottom: 18px;
+    padding: 22px;
+    background: linear-gradient(180deg, #fff, var(--bg-soft));
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow);
+  }
+  .fast-quote__eyebrow {
+    color: var(--orange-dark);
+    font-family: var(--font-head);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .fast-quote h2 { font-size: 1.35rem; margin-bottom: 8px; }
+  .fast-quote__intro { color: var(--steel); margin-bottom: 16px; }
+  .fast-quote__chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .fast-quote__chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 46px;
+    padding: 10px 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    color: var(--ink);
+    font-family: var(--font-head);
+    font-size: .84rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(16,21,27,.05);
+    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+  }
+  .fast-quote__chip:hover { border-color: var(--orange); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+  .fast-quote__chip svg { width: 17px; height: 17px; color: var(--orange-dark); }
+  .fast-quote__cta { margin-top: 2px; white-space: normal; }
+  .fast-quote__note { color: var(--steel); font-size: .9rem; font-weight: 600; margin-top: 12px; text-align: center; }
   .team { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2,1fr); }
   .proof__divider { display: none; }
@@ -605,6 +651,9 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   .svc-card__ic svg { width: 24px; height: 24px; }
   .topbar__left .topbar__item--email { display: none; }
   .form-row { grid-template-columns: 1fr; }
+  .fast-quote { padding: 18px; margin: -18px 0 20px; }
+  .fast-quote__chips { grid-template-columns: 1fr; }
+  .fast-quote__chip { justify-content: flex-start; padding: 12px 13px; }
   .hero__inner { min-height: auto; padding: 54px 0 46px; gap: 0; }
   .hero__mobile-intro { display: block; }
   .hero__desktop-only,
