@@ -267,6 +267,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 /* ==========================================================================
    Services grid
    ========================================================================== */
+.quick-services { display: none; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .svc-card {
   background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
@@ -532,6 +533,71 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 @media (max-width: 560px) {
   .section { padding: 60px 0; }
   .services-grid, .tcards, .steps, .values { grid-template-columns: 1fr; }
+  .quick-services {
+    display: block;
+    margin: -18px 0 28px;
+    padding: 18px;
+    background: linear-gradient(180deg, #fff, var(--bg-soft));
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .quick-services__eyebrow {
+    color: var(--orange-dark);
+    font-family: var(--font-head);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  .quick-services__title {
+    font-size: 1.16rem;
+    margin-bottom: 14px;
+  }
+  .quick-services__chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .quick-service-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 10px 11px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    color: var(--ink);
+    font-family: var(--font-head);
+    font-size: .88rem;
+    font-weight: 700;
+    line-height: 1.15;
+    box-shadow: 0 4px 12px rgba(16,21,27,.05);
+  }
+  .quick-service-chip svg {
+    width: 18px;
+    height: 18px;
+    color: var(--green-dark);
+  }
+  .services-grid {
+    margin-top: 34px;
+    opacity: .86;
+  }
+  .svc-card {
+    padding: 22px 20px;
+    border-radius: var(--r);
+    box-shadow: none;
+  }
+  .svc-card__ic {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    margin-bottom: 14px;
+  }
+  .svc-card__ic svg { width: 24px; height: 24px; }
   .topbar__left .topbar__item--email { display: none; }
   .form-row { grid-template-columns: 1fr; }
   .hero__inner { min-height: auto; padding: 54px 0 46px; gap: 0; }
