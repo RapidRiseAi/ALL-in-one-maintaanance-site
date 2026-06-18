@@ -7,20 +7,23 @@ business & property maintenance company based in Pretoria, South Africa.
 
 ## What's inside
 
+The site lives in **`public/`** (the folder Cloudflare deploys as static assets):
+
 | Page | File | Purpose |
 |------|------|---------|
-| Home | `index.html` | Zero-friction lead conversion — hero CTAs, services, trust signals, social proof |
-| About | `about.html` | Story-driven trust building, values, the team |
-| Contact | `contact.html` | Tap-to-call / WhatsApp / email + a no-backend quote form |
-
-Supporting files:
+| Home | `public/index.html` | Zero-friction lead conversion — hero CTAs, services, trust signals, social proof |
+| About | `public/about.html` | Story-driven trust building, values, the team |
+| Contact | `public/contact.html` | Tap-to-call / WhatsApp / email + a no-backend quote form |
 
 ```
-assets/
-  css/styles.css     # full design system (brand colours, components, responsive)
-  js/main.js         # nav, scroll reveals, back-to-top, quote form → WhatsApp/email
-  img/sprite.svg     # icon + logo source (icons are also inlined per page)
-  img/favicon.svg    # browser tab icon
+public/
+  index.html / about.html / contact.html
+  assets/
+    css/styles.css   # full design system (brand colours, components, responsive)
+    js/main.js       # nav, scroll reveals, back-to-top, quote form → WhatsApp/email
+    img/sprite.svg   # icon + logo source (icons are also inlined per page)
+    img/favicon.svg  # browser tab icon
+wrangler.toml        # Cloudflare Workers config — serves ./public as static assets
 ```
 
 ## Design & conversion notes
@@ -49,24 +52,28 @@ assets/
 
 ## Running locally
 
-It's a static site — just open `index.html` in a browser. To preview exactly as
-hosted, serve the folder:
+It's a static site — just open `public/index.html` in a browser. To preview exactly
+as hosted, serve the `public` folder:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 # then visit http://localhost:8000
 ```
 
 ## Deploying
 
-Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages, cPanel…).
+**Cloudflare Workers (configured):** this repo is connected to a Cloudflare Workers
+project that runs `npx wrangler versions upload` on every push. `wrangler.toml` tells
+it to serve `./public` as static assets — no build step, no Worker script. Pushing to
+the branch triggers a deploy automatically.
 
-**GitHub Pages:** push to the repo, then in *Settings → Pages* set the source to the
-branch root (`/`). A `.nojekyll` file is included so the `assets/` folder is served as-is.
+**Any other static host** (Netlify, Vercel, Cloudflare Pages, cPanel, GitHub Pages…)
+works too — just point it at the `public/` directory as the publish/output folder.
+A `.nojekyll` file is included inside `public/` for GitHub Pages.
 
 ## Things to update with real content
 
 - **Testimonials** on the home page are placeholders — swap them for real Facebook/Google
-  reviews when available (look for the `NOTE FOR THE OWNER` comment in `index.html`).
+  reviews when available (look for the `NOTE FOR THE OWNER` comment in `public/index.html`).
 - Add real **before/after photos** of your work to boost trust & conversions further.
 - If you get a custom domain, update the `og:` meta tags and add a `CNAME` file.

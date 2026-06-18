@@ -1,0 +1,10 @@
+# Cloudflare Workers — static-assets-only deployment.
+# This site is plain HTML/CSS/JS, so we serve the ./public folder as static
+# assets (no Worker script needed). `name` must match the connected Worker
+# service. The Cloudflare build runs `npx wrangler versions upload`, which
+# reads this config for the assets directory.
+name = "all-in-one-maintenance-site"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./public"
