@@ -480,8 +480,8 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 }
 .mobile-bar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 8px; border-radius: 12px; font-family: var(--font-head); font-weight: 700; font-size: .95rem; }
 .mobile-bar a svg { width: 18px; height: 18px; }
-.mobile-bar .mb-call { background: var(--orange); color: #2a1c00; }
-.mobile-bar .mb-whats { background: var(--green); color: #04210f; }
+.mobile-bar .mb-call { flex: .82; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.16); }
+.mobile-bar .mb-whats { flex: 1.18; background: var(--green); color: #04210f; box-shadow: 0 8px 22px rgba(37, 211, 102, .35); }
 
 .to-top { position: fixed; right: 18px; bottom: 22px; z-index: 65; width: 48px; height: 48px; border-radius: 50%; background: var(--charcoal); color: #fff; border: 0; display: grid; place-items: center; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(10px); transition: .25s; }
 .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
