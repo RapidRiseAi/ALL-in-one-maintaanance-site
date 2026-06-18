@@ -175,7 +175,7 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   position: relative; color: #fff; overflow: hidden; min-height: calc(100vh - 116px);
   background:
     linear-gradient(90deg, rgba(10,12,16,.92) 0%, rgba(15,18,23,.82) 46%, rgba(15,18,23,.58) 72%, rgba(15,18,23,.72) 100%),
-    url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1800&q=82") center right / cover no-repeat,
+    url("https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=1800&q=82") center center / cover no-repeat,
     #0f1217;
 }
 .hero::before { /* blueprint grid */
@@ -210,9 +210,6 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
 
 /* Hero visual card */
 .hero__visual { position: relative; padding: 64px 0 86px; }
-.hero-photo { position: absolute; inset: 0 18px 0 -18px; border-radius: 32px; overflow: hidden; box-shadow: 0 34px 90px rgba(0,0,0,.34); }
-.hero-photo::after { content:""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,10,14,.2), rgba(8,10,14,.72)); }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) brightness(.72); }
 .hero-card {
   position: relative; z-index: 2;
   background: linear-gradient(180deg, rgba(20,24,31,.82), rgba(14,17,22,.76));
