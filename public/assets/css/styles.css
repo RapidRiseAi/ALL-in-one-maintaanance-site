@@ -478,8 +478,11 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 800
   padding: 9px 12px calc(9px + env(safe-area-inset-bottom)); gap: 9px;
   box-shadow: 0 -8px 30px rgba(0,0,0,.25);
 }
-.mobile-bar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 8px; border-radius: 12px; font-family: var(--font-head); font-weight: 700; font-size: .95rem; }
-.mobile-bar a svg { width: 18px; height: 18px; }
+.mobile-bar a { flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px; border-radius: 12px; font-family: var(--font-head); font-weight: 700; font-size: .95rem; line-height: 1.15; }
+.mobile-bar a svg { width: 18px; height: 18px; flex: none; }
+.mobile-bar__label { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-align: center; }
+.mobile-bar__main { display: block; }
+.mobile-bar__small { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .01em; opacity: .78; }
 .mobile-bar .mb-call { flex: .82; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.16); }
 .mobile-bar .mb-whats { flex: 1.18; background: var(--green); color: #04210f; box-shadow: 0 8px 22px rgba(37, 211, 102, .35); }
 
