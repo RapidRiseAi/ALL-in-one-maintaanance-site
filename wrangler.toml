@@ -6,5 +6,12 @@
 name = "all-in-one-maintenance-site"
 compatibility_date = "2025-01-01"
 
+# Enable the production *.workers.dev URL (used by `wrangler deploy` on the
+# production branch) and per-version Preview URLs (used by non-production /
+# PR-branch builds that run `wrangler versions upload`). Without these there
+# is no clickable URL for the uploaded version.
+workers_dev = true
+preview_urls = true
+
 [assets]
 directory = "./public"
